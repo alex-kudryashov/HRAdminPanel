@@ -30,6 +30,7 @@ export default {
     },
     addRecord() {
       let id = Math.max.apply(null, this.employees.map(record=> record.id)) + 1; //max id of records
+      if (this.employees.length == 0) {id = 1}
       this.employees.push({id, name: '', position: '', salary: '', status: '', recruitmentDate: ''}) //adding a new record
       this.saveRecords();
     },
