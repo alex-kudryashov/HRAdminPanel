@@ -1,5 +1,5 @@
 <template>
-    <tr>
+    <tr :id="employee._id">
         
             <td><input type="text" v-model="employee.name" v-on:blur="alert(employee)"></td>
             <td><input type="text" v-model="employee.position"></td>
@@ -12,8 +12,8 @@
                 </select>
             </td>
             <td><input type="date" v-model="employee.recruitmentDate"></td>
-            <td><button v-on:click="$emit('remove-record',employee.id)">✖</button></td>
-            <td><button v-on:click="$emit('save-records',employee.id)">✔</button></td>
+            <td><button v-on:click="$emit('remove-record',employee._id)">✖</button></td>
+            <td><button v-on:click="$emit('update-record',employee._id)">✔</button></td>
         
     </tr>
 </template>

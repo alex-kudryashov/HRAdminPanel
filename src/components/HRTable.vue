@@ -29,9 +29,9 @@
             <tableRecord 
                 v-for="employee of employees"
                 v-bind:employee="employee"
-                v-bind:key="employee.id"
+                v-bind:key="employee._id"
                 @remove-record="removeRecord"  
-                @save-records="saveRecords"  
+                @update-record="updateRecord"  
             />
         </tbody>
       </table>
@@ -47,10 +47,10 @@
         },
         methods: {
             removeRecord(id) {
-                this.$emit('remove-record',id)
+                this.$emit('remove-record', id)
             },
-            saveRecords(id) {
-                this.$emit('save-records', id)
+            updateRecord(id) {
+                this.$emit('update-record', id)
             }
         }
     }
