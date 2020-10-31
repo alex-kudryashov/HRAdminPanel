@@ -32,6 +32,3 @@
 <style>
 
 </style>
-
-
-// ask dasha about postion field, do i have to create a list of positions or just an input field

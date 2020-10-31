@@ -16,8 +16,7 @@ import preloader from "@/components/preloader"
 export default {
   name: 'App',
   data() {
-    return {
-      // employees: JSON.parse(localStorage.getItem('employees')) || [{id: 1, name: '', position: '', salary: '', status: '', recruitmentDate: ''}], // getting all records from localstorage
+    return {      
       employees: null,
       socket: null,
       isVisible: true
@@ -29,7 +28,6 @@ export default {
   },
   created() {
     this.socket = new WebSocket('wss://hr-server-test.herokuapp.com/');
-    // this.socket = new WebSocket(location.origin.replace(/^http/, 'ws'));
     this.socket.onopen = e =>{
       console.log('connected');
     };
